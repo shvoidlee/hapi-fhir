@@ -47,10 +47,15 @@ public class FhirServerConfig extends BaseJavaConfigDstu2 {
 	@Bean(destroyMethod = "close")
 	public DataSource dataSource() {
 		BasicDataSource retVal = new BasicDataSource();
-		retVal.setDriver(new org.apache.derby.jdbc.EmbeddedDriver());
-		retVal.setUrl("jdbc:derby:directory:target/jpaserver_derby_files;create=true");
-		retVal.setUsername("");
-		retVal.setPassword("");
+		//retVal.setDriver(new org.apache.derby.jdbc.EmbeddedDriver());
+		//retVal.setUrl("jdbc:derby:directory:target/jpaserver_derby_files;create=true");
+		//retVal.setUsername("");
+		//retVal.setPassword("");
+		//retVal.setDriver(new com.mysql.jdbc.Driver());
+		retVal.setDriverClassName("com.mysql.jdbc.Driver");
+		retVal.setUrl("jdbc:mysql://192.168.2.102/fhir");
+		retVal.setUsername("fhir");
+		retVal.setPassword("fhir");
 		return retVal;
 	}
 
