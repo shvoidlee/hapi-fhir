@@ -47,10 +47,18 @@ public class FhirServerConfig extends BaseJavaConfigDstu2 {
 	@Bean(destroyMethod = "close")
 	public DataSource dataSource() {
 		BasicDataSource retVal = new BasicDataSource();
-		retVal.setDriver(new org.apache.derby.jdbc.EmbeddedDriver());
-		retVal.setUrl("jdbc:derby:directory:target/jpaserver_derby_files;create=true");
-		retVal.setUsername("");
-		retVal.setPassword("");
+		//retVal.setDriver(new org.apache.derby.jdbc.EmbeddedDriver());
+        //retVal.setUrl("jdbc:derby:directory:target/jpaserver_derby_files;create=true");
+        //retVal.setUsername("");
+        //retVal.setPassword("");
+		try {
+            retVal.setDriver(new com.mysql.jdbc.Driver());
+            retVal.setUrl("jdbc:mysql://192.168.2.102/fhir_v13");
+            retVal.setUsername("fhir_v13");
+            retVal.setPassword("fhir_v13");
+		} catch (Exception e) {
+		    System.out.println(e.getMessage());
+		}
 		return retVal;
 	}
 
@@ -68,7 +76,8 @@ public class FhirServerConfig extends BaseJavaConfigDstu2 {
 
 	private Properties jpaProperties() {
 		Properties extraProperties = new Properties();
-		extraProperties.put("hibernate.dialect", org.hibernate.dialect.DerbyTenSevenDialect.class.getName());
+		//extraProperties.put("hibernate.dialect", org.hibernate.dialect.DerbyTenSevenDialect.class.getName());
+		extraProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
 		extraProperties.put("hibernate.format_sql", "true");
 		extraProperties.put("hibernate.show_sql", "false");
 		extraProperties.put("hibernate.hbm2ddl.auto", "update");
