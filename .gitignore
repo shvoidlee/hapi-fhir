@@ -1,0 +1,19 @@
+/bin
+/target
+target/
+.idea/
+.project/
+.settings/
+.metadata/
+RemoteSystemsTempFiles/
+Servers/
+*.iml
+*.log
+*.log*
+nohup.out
+.DS_Store
+
+# Vagrant stuff.
+.vagrant
+/vagrant/build
+/vagrant/chef/tmp
