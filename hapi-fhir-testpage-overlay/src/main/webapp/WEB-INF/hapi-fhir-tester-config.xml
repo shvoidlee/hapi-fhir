@@ -11,8 +11,8 @@
 	<bean class="ca.uhn.fhir.to.TesterConfig">
 		<property name="servers">
 			<list>
-				<value>home     , DSTU1 , Localhost Server DSTU1          , http://localhost:8887/fhir/contextDstu1</value>
-				<value>home_d2  , DSTU2 , Localhost Server DSTU2          , http://localhost:8887/fhir/contextDstu2</value>
+				<value>home     , DSTU1 , Localhost Server DSTU1          , http://211.20.120.59:8000/fhir-jpaserver_v12/baseDstu2</value>
+				<value>home_d2  , DSTU2 , Localhost Server DSTU2          , http://211.20.120.59:8000/fhir-jpaserver_v12/baseDstu2</value>
 				<value>hi       , DSTU1 , Health Intersections            , http://fhir.healthintersections.com.au/open</value>
 				<value>furore   , DSTU1 , Spark - Furore Reference Server , http://spark.furore.com/fhir</value>
 				<value>blaze    , DSTU1 , Blaze (Orion Health)            , https://fhir.orionhealth.com/blaze/fhir</value>
