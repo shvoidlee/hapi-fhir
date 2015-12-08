@@ -154,7 +154,7 @@ public abstract class BaseHapiFhirResourceDao<T extends IResource> extends BaseH
 	@Override
 	public DaoMethodOutcome create(T theResource, String theIfNoneExist, boolean thePerformIndexing) {
 		if (isNotBlank(theResource.getId().getIdPart())) {
-			if (getContext().getVersion().getVersion().equals(FhirVersionEnum.DSTU1) || getContext().getVersion().getVersion().equals(FhirVersionEnum.DSTU2)) {
+			if (getContext().getVersion().getVersion().equals(FhirVersionEnum.DSTU1)) {
 				if (theResource.getId().isIdPartValidLong()) {
 					String message = getContext().getLocalizer().getMessage(BaseHapiFhirResourceDao.class, "failedToCreateWithClientAssignedNumericId", theResource.getId().getIdPart());
 					throw new InvalidRequestException(message, createErrorOperationOutcome(message));
