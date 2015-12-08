@@ -181,7 +181,7 @@ public class MethodUtil {
 		addTagsToPostOrPut(theContext, theResource, retVal);
 
 		if (!dstu1) {
-			retVal.setOmitResourceId(true);
+			//retVal.setOmitResourceId(true);
 		}
 		// addContentTypeHeaderBasedOnDetectedType(retVal, theResourceBody);
 
