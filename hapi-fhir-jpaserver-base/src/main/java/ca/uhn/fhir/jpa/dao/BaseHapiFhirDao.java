@@ -1531,14 +1531,15 @@ public abstract class BaseHapiFhirDao<T extends IBaseResource> implements IDao {
 	static String normalizeString(String theString) {
 		char[] out = new char[theString.length()];
 		theString = Normalizer.normalize(theString, Normalizer.Form.NFD);
-		int j = 0;
+		/*int j = 0;
 		for (int i = 0, n = theString.length(); i < n; ++i) {
 			char c = theString.charAt(i);
 			if (c <= '\u007F') {
 				out[j++] = c;
 			}
 		}
-		return new String(out).toUpperCase();
+		return new String(out).toUpperCase();*/
+		return theString.toUpperCase();
 	}
 
 	private static String parseNarrativeTextIntoWords(IResource theResource) {
