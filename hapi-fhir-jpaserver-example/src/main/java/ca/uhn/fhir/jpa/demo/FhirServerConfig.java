@@ -53,7 +53,7 @@ public class FhirServerConfig extends BaseJavaConfigDstu2 {
         //retVal.setPassword("");
 		try {
             retVal.setDriver(new com.mysql.jdbc.Driver());
-            retVal.setUrl("jdbc:mysql://192.168.2.102/fhir_v13");
+            retVal.setUrl("jdbc:mysql://localhost:3306/fhir_v13?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf-8");
             retVal.setUsername("fhir_v13");
             retVal.setPassword("fhir_v13");
 		} catch (Exception e) {
