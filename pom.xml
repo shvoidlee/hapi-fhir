@@ -1388,7 +1388,7 @@
 				<module>hapi-fhir-cli</module>
 				<module>hapi-fhir-dist</module>
 				<module>examples</module>
-				<module>hapi-fhir-osgi-core</module>
+				<!--module>hapi-fhir-osgi-core</module-->
 			</modules>
 		</profile>
 		<profile>
